@@ -1,30 +1,17 @@
-# React + TypeScript + Vite
+# Limited Concurrency Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project showcases a technique to queue and limit the number of concurrent calls to an API, by leveraging [tanstack-query](https://tanstack.com/query/latest) features.
 
-Currently, two official plugins are available:
+This technique is useful when you don't want to make numerous simultaneous calls to an API server, such as:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- The calls you are making are resource expensive, putting heavy demand on the server.
+- You have rate limits on the API.
+- Your users expect the calls to be queued and processed sequentially.
 
-## Expanding the ESLint configuration
+MENTION ARTICLE
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## The use-case
 
-- Configure the top-level `parserOptions` property like this:
+In this example, we will use a very complex on-premisses AI API to determine if each customer in a list is eligible for a discount.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+As each of these queries can require a ton of memory and processing power, we want to queue each name, instead of sending multiple concurrent calls and risk crashing the API server.

@@ -12,6 +12,6 @@ MENTION ARTICLE
 
 ## The use-case
 
-In this example, we will use a very complex on-premisses AI API to determine if each customer in a list is eligible for a discount.
+In this example, we will use a very complex on-premisses AI API to determine if each cclient in a list is eligible for a discount.
 
 As each of these queries can require a ton of memory and processing power, we want to queue each name, instead of sending multiple concurrent calls and risk crashing the API server.

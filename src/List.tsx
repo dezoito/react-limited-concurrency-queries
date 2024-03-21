@@ -72,7 +72,7 @@ function List() {
           (result: any, index: number) =>
             result.data && (
               <li key={index}>
-                {result.data.name} -{" "}
+                {result.data.name}:{" "}
                 {result.data.inference ? (
                   <span style={{ color: "green" }}>Approved</span>
                 ) : (

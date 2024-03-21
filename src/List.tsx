@@ -86,15 +86,17 @@ function List() {
       <div>
         {/* Add link to increase concurrency if we are done fetching */}
         {noCompleted === names.length && (
-          <a
-            href="#"
+          <>
+          <span>Want to make this faster? --> </span>
+          <button
             onClick={() => {
               setConcurrentRequests((c) => c + 1);
               queryClient.removeQueries();
             }}
-          >
-            Increase Concurrent Requests
-          </a>
+            >
+              Increase Concurrent Requests to { concurrentRequests + 1 }
+          </button>
+            </>
         )}
       </div>
     </div>

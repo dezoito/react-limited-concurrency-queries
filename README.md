@@ -10,15 +10,9 @@ This technique is useful when you don't want to make numerous simultaneous calls
 - You have rate limits on the API.
 - Your users expect the calls to be queued and processed sequentially.
 
-In the animation below, we process the same list, first sequentially, then with 2 concurrent calls at a time:
+In the animation below, we process the same list, first sequentially, then with 2 and 3 concurrent calls at a time:
 
 <img src="./images/demo.gif" alt="Demo"/>
-
-## The use-case
-
-In this example, we will use a very complex on-premisses AI API to determine if each cclient in a list is eligible for a discount.
-
-As each of these queries can require a ton of memory and processing power, we want to queue each name, instead of sending multiple concurrent calls and risk crashing the API server.
 
 ## How to run
 

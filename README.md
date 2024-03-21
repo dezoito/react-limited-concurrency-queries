@@ -8,6 +8,8 @@ This technique is useful when you don't want to make numerous simultaneous calls
 - You have rate limits on the API.
 - Your users expect the calls to be queued and processed sequentially.
 
+<img src="./images/demo.gif" alt="Demo"/>
+
 LINK TO ARTICLE
 
 ## The use-case

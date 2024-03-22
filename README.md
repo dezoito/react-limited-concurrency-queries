@@ -14,7 +14,7 @@ Processing is done sequentially firsst, then with 2 and 3 concurrent calls at a 
 
 <img src="./images/demo.gif" alt="Demo"/>
 
-When we increase the number of concurrent requests, overlaps happen as the API time to response varies but multiple calls are being handled at the same time.
+When we increase the number of concurrent requests, overlaps happen as the API is handling simultaneous requests that have different processing times.
 
 Limiting concurrency is useful when you don't want to make numerous simultaneous calls to an API server, such as:
 

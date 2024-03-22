@@ -61,9 +61,13 @@ function List() {
         Verify if the clients in our database are elegible for a discount.
         <br />
         {concurrentRequests == 0 ? (
-          <span>One query at a time</span>
+          <span>
+            Execute <b>one</b> query at a time
+          </span>
         ) : (
-          <span>{concurrentRequests + 1} queries at time</span>
+          <span>
+            Execute <b>{concurrentRequests + 1}</b> queries at time
+          </span>
         )}
         :
       </div>
@@ -92,8 +96,8 @@ function List() {
               width="24"
               height="24"
               xmlns="http://www.w3.org/2000/svg"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               fill="white"
             >
               <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />

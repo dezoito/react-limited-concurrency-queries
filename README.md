@@ -8,9 +8,9 @@ Please read the [Limited Concurrency for Multiple API calls in React](http://dez
 
 ---
 
-In the animation below, we simulate the process of using a complex API to define if clients are elegible for a discount.
+In the animation below, we simulate the process of using a complex API to define if clients are eligible for a discount.
 
-Processing is done sequentially firsst, then with 2 and 3 concurrent calls at a time:
+Processing is done sequentially first, then with 2 and 3 concurrent calls at a time:
 
 <img src="./images/demo.gif" alt="Demo"/>
 

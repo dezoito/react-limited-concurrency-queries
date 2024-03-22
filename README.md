@@ -2,17 +2,25 @@
 
 This project showcases a technique to queue and limit the number of concurrent calls to an API, by leveraging [tanstack-query](https://tanstack.com/query/latest) features.
 
+This allows you to balance the need for speed in displaying results to the user, versus flooding the server with multiple expensive requests, or having your requests denied due to rate limiting policies.
+
 Please read the [Limited Concurrency for Multiple API calls in React](http://dezoito.github.io/2024/03/21/react-limited-concurrency.html) article for a detailed explanation of the concepts and code used in this demo.
 
-This technique is useful when you don't want to make numerous simultaneous calls to an API server, such as:
+---
+
+In the animation below, we simulate the process of using a complex API to define if clients are elegible for a discount.
+
+Processing is done sequentially firsst, then with 2 and 3 concurrent calls at a time:
+
+<img src="./images/demo.gif" alt="Demo"/>
+
+When we increase the number of concurrent requests, overlaps happen as the API time to response varies but multiple calls are being handled at the same time.
+
+Limiting concurrency is useful when you don't want to make numerous simultaneous calls to an API server, such as:
 
 - The calls you are making are resource expensive, putting heavy demand on the server.
 - You have rate limits on the API.
 - Your users expect the calls to be queued and processed sequentially.
-
-In the animation below, we process the same list, first sequentially, then with 2 and 3 concurrent calls at a time:
-
-<img src="./images/demo.gif" alt="Demo"/>
 
 ## How to run
 

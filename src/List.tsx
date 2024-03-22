@@ -12,7 +12,7 @@ import "./App.css";
  */
 async function getInference(name: string) {
   console.log("getting inference for", name);
-  const rand = Math.floor(Math.random() * 3) + 1;
+  const rand = Math.floor(Math.random() * 3) + 0.5;
   await new Promise((res) => setTimeout(res, rand * 1000));
   return {
     name,

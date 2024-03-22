@@ -86,17 +86,27 @@ function List() {
       <div>
         {/* Add link to increase concurrency if we are done fetching */}
         {noCompleted === names.length && (
-          <>
-          <span>Want to make this faster? --> </span>
-          <button
-            onClick={() => {
-              setConcurrentRequests((c) => c + 1);
-              queryClient.removeQueries();
-            }}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span>Want to make this faster?</span>
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="white"
             >
-              Increase Concurrent Requests to { concurrentRequests + 1 }
-          </button>
-            </>
+              <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+            </svg>
+            <button
+              onClick={() => {
+                setConcurrentRequests((c) => c + 1);
+                queryClient.removeQueries();
+              }}
+            >
+              Increase Concurrent Requests to {concurrentRequests + 1}
+            </button>
+          </div>
         )}
       </div>
     </div>

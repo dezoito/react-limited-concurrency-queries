@@ -27,8 +27,8 @@ Limiting concurrency is useful when you don't want to make numerous simultaneous
 Clone this repository and cd to the project folder:
 
 ```sh
-git clone https://github.com/dezoito/queries-app.git
-cd ./queries-app
+git clone https://github.com/dezoito/react-limited-concurrency-queries.git
+cd ./react-limited-concurrency-queries
 ```
 
 Install the dependecies:
